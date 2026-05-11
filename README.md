@@ -23,3 +23,5 @@ fvm flutter pub get
 
 
 -------------------------------2.Co
+
+carousel_slider: ^5.1.2 slider bananor jonno
