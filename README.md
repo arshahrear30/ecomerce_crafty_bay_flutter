@@ -16,3 +16,10 @@ mvvm /mvc -- code structure way - view model
 
 if u face fvm error type in studio terminal : fvm use global 
 fvm flutter pub get 
+
+-------------------------------1.Cl
+
+//HW : make the timer workable // count ses hoibar por resent button kaz korbey : verify otp screen ::
+
+
+-------------------------------2.Co

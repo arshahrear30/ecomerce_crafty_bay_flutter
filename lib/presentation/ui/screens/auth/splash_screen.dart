@@ -5,6 +5,8 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 
 import 'verify_email_screen.dart';
 
+
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

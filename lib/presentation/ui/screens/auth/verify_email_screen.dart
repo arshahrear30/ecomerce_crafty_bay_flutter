@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../widgets/app_logo.dart';
+import '../../widgets/app_logo.dart';
+import 'verify_otp_screen.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -48,8 +49,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-
-
+                    Get.to(const VerifyOTPScreen());
                   },
                   child: const Text('Next'),
                 ),
