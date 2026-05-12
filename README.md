@@ -33,3 +33,5 @@ jdi kono emulator open thake tahoiley dekbo widget perforrmance .
 HW :: Card e jai producta acey oitar detail review deya add kortey hoibo .. Product big image tar nicey review button acey ..
 
 another_flushbar: ^2.0.1 // ata diya ki ki kora jay deikho basay 
+
+HW :: app e probesh korley hat er bam e 3 dot menu set kore
