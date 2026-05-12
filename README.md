@@ -28,3 +28,8 @@ carousel_slider: ^5.1.2 slider bananor jonno
 
 jdi kono emulator open thake tahoiley dekbo widget perforrmance .
 .Android studio ledt side e File icon er nicey 3 dot e click korbo and flutter performance dektey parbo
+
+--------------------------------
+HW :: Card e jai producta acey oitar detail review deya add kortey hoibo .. Product big image tar nicey review button acey ..
+
+another_flushbar: ^2.0.1 // ata diya ki ki kora jay deikho basay 
