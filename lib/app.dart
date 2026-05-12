@@ -1,6 +1,7 @@
 import 'package:ecomerce_crafty_bay/presentation/ui/screens/auth/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'controller_binder.dart';
 import 'presentation/ui/utility/app_theme_data.dart';
 
 class CraftyBay extends StatelessWidget {
@@ -10,8 +11,8 @@ class CraftyBay extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: AppThemeData.lightThemeData,
-
       home: SplashScreen(),
+      initialBinding: ControllerBinder(),
     );
   }
 }
