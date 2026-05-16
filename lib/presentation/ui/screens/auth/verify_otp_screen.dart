@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../../../state_holders/verify_otp_controller.dart';
 import '../../utility/app_colours.dart';
 import '../../widgets/app_logo.dart';
@@ -55,6 +54,8 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                 const SizedBox(
                   height: 24,
                 ),
+
+
                 PinCodeTextField(
                   controller: _otpTEController,
                   length: 4,
@@ -80,9 +81,13 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                   },
                   appContext: context,
                 ),
+
+
                 const SizedBox(
                   height: 24,
                 ),
+
+
                 SizedBox(
                   width: double.infinity,
                   child: GetBuilder<VerifyOTPController>(
@@ -117,14 +122,20 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                       }
                   ),
                 ),
+
+
                 const SizedBox(
                   height: 24,
                 ),
+
+
                 RichText(
                   text: const TextSpan(
                     style: TextStyle(
                       color: Colors.grey,
                     ),
+
+
                     children: [
                       TextSpan(text: 'This code will expire '),
                       // TODO - make this timer workable
@@ -136,8 +147,13 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                         ),
                       ),
                     ],
+
+
                   ),
                 ),
+
+
+
                 TextButton(
                   onPressed: () {},
                   child: const Text(
@@ -145,6 +161,9 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
+
+
+
               ],
             ),
           ),

@@ -35,3 +35,6 @@ HW :: Card e jai producta acey oitar detail review deya add kortey hoibo .. Prod
 another_flushbar: ^2.0.1 // ata diya ki ki kora jay deikho basay 
 
 HW :: app e probesh korley hat er bam e 3 dot menu set kore
+
+-----------------------------
+Input sob gular validation gula add korba .. 

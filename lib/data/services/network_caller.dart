@@ -1,15 +1,16 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:http/http.dart' as http;
-//import 'package:get/get.dart';
-//import 'package:http/http.dart';
+import 'package:http/http.dart';
+import '../models/response_data.dart';
+
+
 
 class NetworkCaller {
   Future<ResponseData> getRequest(String url, {String? token}) async {
     log(url);
     log(token.toString());
 
-    final http.Response response = await http.get(
+    final Response response = await get(
 
       Uri.parse(url),
       headers: {
@@ -49,7 +50,7 @@ class NetworkCaller {
     log(url);
     log(body.toString());
 
-    final http.Response response = await http.post(Uri.parse(url), body: jsonEncode(body));
+    final Response response = await post(Uri.parse(url), body: jsonEncode(body));
 
     log(response.statusCode.toString());
     log(response.body.toString());
@@ -77,18 +78,4 @@ class NetworkCaller {
       );
     }
   }
-}
-
-class ResponseData {
-  final bool isSuccess;
-  final int statusCode;
-  final dynamic responseData;
-  final String? errorMessage;
-
-  ResponseData({
-    required this.isSuccess,
-    required this.statusCode,
-    this.responseData,
-    this.errorMessage,
-  });
 }

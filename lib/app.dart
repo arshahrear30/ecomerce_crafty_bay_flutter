@@ -10,9 +10,12 @@ class CraftyBay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
       theme: AppThemeData.lightThemeData,
-      home: SplashScreen(),
-      initialBinding: ControllerBinder(),
+
+      home: SplashScreen(), //home hisebey dicey maney protom e eta kaz korbey
+      initialBinding: ControllerBinder(),//initailbinding deyer karon e eta suru tei call hoye loaded obstay thakbey ..tailey user experience valo paibo
+
     );
   }
 }
