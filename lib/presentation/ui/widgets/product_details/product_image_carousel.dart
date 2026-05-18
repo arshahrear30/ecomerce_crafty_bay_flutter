@@ -5,10 +5,11 @@ import '../../utility/app_colours.dart';
 
 class ProductImageCarousel extends StatefulWidget {
   const ProductImageCarousel({
-    super.key, this.height,
+    super.key, this.height, required this.urls,
   });
 
   final double? height;
+  final List<String> urls;
 
   @override
   State<ProductImageCarousel> createState() => _ProductImageCarouselState();
@@ -29,16 +30,15 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
             },
             viewportFraction: 1,
           ),
-          items: [1,2,3,4,5].map((i) {
+          items: widget.urls.map((url) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                    width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                      color: Colors.grey,
-                    ),
-                    alignment: Alignment.center,
-                    child: Text('text $i', style: const TextStyle(fontSize: 16.0),)
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    image: DecorationImage(image: NetworkImage(url)),
+                  ),
                 );
               },
             );
@@ -54,7 +54,7 @@ class _ProductImageCarouselState extends State<ProductImageCarousel> {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 0; i < widget.urls.length; i++)
                       Container(
                         height: 12,
                         width: 12,

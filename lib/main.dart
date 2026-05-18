@@ -1,11 +1,16 @@
-import 'package:flutter/cupertino.dart';
-
+import 'package:flutter/material.dart';
 import 'app.dart';
 
-void main(){
+/// Layer first - Layer (Data, Ui, Domain)
+/// Feature first - Login (Layer), Cart(Layer)
+///
+/// Good code, Bad code
+/// Bad Code - Code Smell
+/// Good code - Readibility, reusability, extend
+/// Refactoring - Process - Bad - clean - Good
+/// KISS - Keep It Simple, Stupid
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const CraftyBay());
 }
-
-//Stateless = fixed UI  এখানে UI একবার build হয়, data change হলেও নিজে থেকে update হয় না।
-//Stateful = changeable UI
-
