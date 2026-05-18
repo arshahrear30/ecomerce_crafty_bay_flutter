@@ -38,3 +38,8 @@ HW :: app e probesh korley hat er bam e 3 dot menu set kore
 
 -----------------------------
 Input sob gular validation gula add korba .. 
+
+যা শুধু data বা logic handle করে তা সাধারণ Class, 
+আর যা স্ক্রিনে visual UI দেখায় তা Widget..
+cart_product_item.dart, product_card_item.dart হলো custom widgets।
+Flutter-এ স্ক্রিনে আপনি যা কিছু দেখতে পান  text, button, image, list, loading indicator তার সবকিছুই হলো Widget।

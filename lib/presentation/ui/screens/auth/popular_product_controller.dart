@@ -87,7 +87,7 @@ import '../../../../data/utility/urls.dart';
 class PopularProductController extends GetxController {
   bool _inProgress = false;
 
-  bool get inProgress => _inProgress;
+  bool get inProgress => _inProgress;//bool ken use korchi : API call চললে → true ..API শেষ হলে → false
 
   String _errorMessage = '';
 
@@ -97,19 +97,26 @@ class PopularProductController extends GetxController {
 
   ProductListModel get productListModel => _productListModel;
 
-  Future<bool> getPopularProductList() async {
-    bool isSuccess = false;
-    _inProgress = true;
-    update();
-    final response = await NetworkCaller().getRequest(Urls.popularProduct);
-    _inProgress = false;
+  Future<bool> getPopularProductList() async {//মানে function future এ bool return করবে।যেন screen বুঝতে পারে success না fail।
+    bool isSuccess = false;//শুরুতে ধরে নিচ্ছে fail। যদি API success হয় তখন true হবে।
+    _inProgress = true;//মানে loading শুরু।
+    update();//মানে UI refresh করো।
+
+    final response = await NetworkCaller().getRequest(Urls.popularProduct);//মানে server থেকে data আনছে।
+    //networkcaller class e data request sent korcey .. erpor Urls
+    _inProgress = false;//API শেষ হলে false
+
+
     if (response.isSuccess) {
-      _productListModel = ProductListModel.fromJson(response.responseData);
+      _productListModel = ProductListModel.fromJson(response.responseData);//মানে JSON data কে model এ convert করছে।
       isSuccess = true;
     } else {
       _errorMessage = response.errorMessage;
     }
-    update();
+
+
+    update();//মানে UI refresh করো।
     return isSuccess;
+
   }
 }
