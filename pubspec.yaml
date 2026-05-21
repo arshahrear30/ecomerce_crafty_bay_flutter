@@ -20,6 +20,7 @@ dependencies:
   item_count_number_button: ^1.9.2
   http: ^1.6.0
   shared_preferences: ^2.5.5
+  webview_flutter: ^4.13.1
 
 
 

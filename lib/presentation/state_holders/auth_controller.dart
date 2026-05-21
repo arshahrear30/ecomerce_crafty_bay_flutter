@@ -1,8 +1,11 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../data/models/profile.dart';
+import 'dart:convert';
+
+import '../ui/screens/auth/verify_email_screen.dart';
+
 
 class AuthController extends GetxController {
   static String? token;
@@ -43,8 +46,13 @@ class AuthController extends GetxController {
     }
   }
 
-  Future<void> clearAuthData() async {
+  static Future<void> clearAuthData() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.clear();
+    token = null;
+  }
+
+  static Future<void> goToLogin() async {
+    Get.to(() => const VerifyEmailScreen());
   }
 }

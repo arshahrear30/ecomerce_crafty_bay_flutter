@@ -239,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         CircleIconButton(
           onTap: () async {
-            await Get.find<AuthController>().clearAuthData();
+            await AuthController.clearAuthData();
             Get.offAll(() => const VerifyEmailScreen()); //নতুন screen-এ যাও + আগের সব screen remove করে দাও। সব previous page remove করো, তারপর নতুন page open করো
             // Get.to()	নতুন page push করে // Get.off()	current page remove করে next page //Get.offAll()	সব page remove করে next page
           },

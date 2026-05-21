@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../state_holders/cart_list_controller.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
 import '../utility/app_colours.dart';
@@ -42,27 +41,38 @@ class _CartsScreenState extends State<CartsScreen> {
           ),
         ),
         body: GetBuilder<CartListController>(
-            builder: (cartListController) {
-              if (cartListController.inProgress == true) {
-                return const CenterCircularProgressIndicator();
-              }
-              return Column(
-                children: [
-                  Expanded(
-                    child: ListView.separated(
-                      itemCount: cartListController.cartListModel.cartItemList?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        return const CartProductItem();
-                      },
-                      separatorBuilder: (_, __) => const SizedBox(
-                        height: 8,
-                      ),
+          builder: (cartListController) {
+            if (cartListController.inProgress == true) {
+              return const CenterCircularProgressIndicator();
+            }
+
+            return Column(
+              children: [
+                Expanded(
+                  child: ListView.separated(
+                    itemCount:
+                    cartListController.cartListModel.cartItemList?.length ?? 0,
+                    itemBuilder: (context, index) {
+
+                      // FIX: cart item variable নেওয়া হয়েছে
+                      final cartItem = cartListController
+                          .cartListModel.cartItemList![index];
+
+                      return CartProductItem(
+
+                        // FIX: required named parameter pass করা হয়েছে
+                        cartItem: cartItem,
+                      );
+                    },
+                    separatorBuilder: (_, __) => const SizedBox(
+                      height: 8,
                     ),
                   ),
-                  totalPriceAndCheckOutSection
-                ],
-              );
-            }
+                ),
+                totalPriceAndCheckOutSection
+              ],
+            );
+          },
         ),
       ),
     );
@@ -72,11 +82,12 @@ class _CartsScreenState extends State<CartsScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-          color: AppColors.primaryColor.withOpacity(0.15),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-          )),
+        color: AppColors.primaryColor.withOpacity(0.15),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
+        ),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -86,9 +97,10 @@ class _CartsScreenState extends State<CartsScreen> {
               Text(
                 'Total Price',
                 style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black45),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black45,
+                ),
               ),
               Text(
                 '\$10232930',

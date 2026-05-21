@@ -1,4 +1,3 @@
-
 import 'package:ecomerce_crafty_bay/data/models/product_model.dart';
 
 class CartItem {
@@ -10,6 +9,7 @@ class CartItem {
   String? createdAt;
   String? updatedAt;
   ProductModel? product;
+  int quantity = 1;
 
   CartItem(
       {this.id,
@@ -28,6 +28,7 @@ class CartItem {
     color = json['color'];
     size = json['size'];
     createdAt = json['created_at'];
+    quantity = int.tryParse(json['qty']) ?? 1;
     updatedAt = json['updated_at'];
     product =
     json['product'] != null ? ProductModel.fromJson(json['product']) : null;

@@ -24,7 +24,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final List<Widget> _screens = const [
     HomeScreen(),//index 0 //ei gula icon er jonno serial//oi icon e click korley ei serial hisebey kaz korbey
     CategoryScreen(),//index 1
-    CartsScreen(),//index 2
+    CartsScreen(),//index 2 //CartsListScreen
     WishListScreen(),//index 3
   ];
 

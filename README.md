@@ -43,3 +43,6 @@ Input sob gular validation gula add korba ..
 আর যা স্ক্রিনে visual UI দেখায় তা Widget..
 cart_product_item.dart, product_card_item.dart হলো custom widgets।
 Flutter-এ স্ক্রিনে আপনি যা কিছু দেখতে পান  text, button, image, list, loading indicator তার সবকিছুই হলো Widget।
+
+void public method key interface boley .. 
+private method key bole implementation
